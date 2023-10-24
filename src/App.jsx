@@ -30,7 +30,7 @@ function App() {
   function fetchApiData(searchWords = "Mia+Khalifa", maxResults = 20, startIndex = 0){
     let words = searchWords.replace(/\s */g,'+');
     fetch(
-       `https://www.googleapis.com/books/v1/volumes?q=${words}&maxResults=${maxResults}&startIndex=${startIndex}&key=AIzaSyCvGnmu2rPAFXTuFVw8Yu94iVvizTIOOuA`
+       `https://www.googleapis.com/books/v1/volumes?q=${words}&maxResults=${maxResults}&startIndex=${startIndex}&key=`
     ).then( response => response.json())
     .then(data => {setBooks(data.items.filter(item => item.volumeInfo.language !== 'tr'));
     setIsLoading(false);
